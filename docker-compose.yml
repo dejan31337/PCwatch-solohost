@@ -1,0 +1,10 @@
+services:
+  pcwatch:
+    image: ghcr.io/dejan31337/pcwatch:0.1.0
+    restart: unless-stopped
+    environment:
+      APP_TOKEN: ${APP_TOKEN}
+    labels:
+      pi.ui.primary: "true"
+    ports:
+      - "127.0.0.1:18642:8080"

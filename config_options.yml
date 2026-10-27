@@ -1,0 +1,14 @@
+title: PC Watch
+eyebrow: SoloHost App
+description: Private read-only monitoring dashboard for a Windows PC. Install the Windows agent separately on the same computer.
+footer_hint: Keep your token private. The Windows agent must use the same token and send metrics to http://127.0.0.1:18642/api/metrics.
+output_file: .env
+after_save: >-
+  Configuration saved. Make sure the published PC Watch image is available and install the Windows agent using the same token.
+fields:
+  - name: APP_TOKEN
+    label: Shared secret token
+    type: password
+    required: true
+    preserve_if_blank: true
+    help: Use a long random secret (at least 32 characters). Enter this same value in the Windows agent's PCWATCH_TOKEN environment variable.
